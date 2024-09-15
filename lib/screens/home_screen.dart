@@ -1,47 +1,92 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:code_quest/utilities/colours.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import '../providers/providers.dart';
 import '../widgets/widgets.dart';
-import 'screens.dart';
 
-class HomeScreen extends StatelessWidget {
-  final User user;
+class HomeScreen extends ConsumerStatefulWidget {
+  const HomeScreen({super.key});
 
-  const HomeScreen({super.key, required this.user});
+  @override
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  String? _expandedButton;
+
+  void _onDifficultySelected(String language, String difficulty) {
+    Navigator.of(context).pushNamed('/quiz', arguments: {
+      'language': language,
+      'difficulty': difficulty,
+    });
+  }
+
+  void _onButtonExpanded(String buttonText) {
+    setState(() {
+      _expandedButton = _expandedButton == buttonText ? null : buttonText;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    final user = ref.watch(signinProvider);
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
-            Header(user: user),
+            Header(user: user!),
             Center(
-              child: Container(
-                width: 300,
+              child: Padding(
                 padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: const [
-                    BoxShadow(color: Colors.black26, blurRadius: 10),
-                  ],
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const CustomText(
-                      text: "Choose a Language",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    ListTile(
-                      title: const CustomText(text: "Python"),
-                      trailing: const Icon(Icons.arrow_forward),
-                      onTap: () => _showDifficultySelector(context, "Python"),
-                    ),
-                    // Add more languages here
-                  ],
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const CustomText(
+                        text: "Choose a programming language to proceed",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        align: TextAlign.center,
+                      ),
+                      const SizedBox(height: 50),
+                      ExpansibleButton(
+                        assetPath: 'assets/images/python.svg',
+                        buttonText: 'Python',
+                        isExpanded: _expandedButton == 'Python',
+                        onExpand: () => _onButtonExpanded('Python'),
+                        onDifficultySelected: (difficulty) {
+                          _onDifficultySelected('Python', difficulty);
+                        },
+                      ),
+                      const SizedBox(height: 20),
+                      ExpansibleButton(
+                        assetPath: 'assets/images/java.svg',
+                        buttonText: 'Java',
+                        isExpanded: _expandedButton == 'Java',
+                        onExpand: () => _onButtonExpanded('Java'),
+                        onDifficultySelected: (difficulty) {
+                          _onDifficultySelected('Java', difficulty);
+                        },
+                      ),
+                      const SizedBox(height: 20),
+                      ExpansibleButton(
+                        assetPath: 'assets/images/html.svg',
+                        buttonText: 'HTML',
+                        isExpanded: _expandedButton == 'HTML',
+                        onExpand: () => _onButtonExpanded('HTML'),
+                        onDifficultySelected: (difficulty) {
+                          _onDifficultySelected('HTML', difficulty);
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -50,83 +95,35 @@ class HomeScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.bar_chart), label: 'Progress'),
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings), label: 'Settings'),
+            icon: Icon(Icons.bar_chart_rounded),
+            label: 'Progress',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings_rounded),
+            label: 'Settings',
+          ),
         ],
+        iconSize: 30,
+        selectedItemColor: Colours.tertiary,
+        selectedLabelStyle: GoogleFonts.poppins(
+          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        unselectedLabelStyle: GoogleFonts.poppins(
+          textStyle: const TextStyle(fontSize: 16),
+        ),
         onTap: (index) {
-          if (index == 2) {
+          if (index == 1) {
+            Navigator.of(context).pushNamed('/progress');
+          } else if (index == 2) {
             Navigator.of(context).pushNamed('/settings');
           }
         },
       ),
-    );
-  }
-
-  void _showDifficultySelector(BuildContext context, String language) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        String? selectedDifficulty;
-        return AlertDialog(
-          title: const CustomText(text: "Select Difficulty"),
-          content: DropdownButton<String>(
-            value: selectedDifficulty,
-            items: ["Beginner", "Junior Dev", "Professional"]
-                .map((level) =>
-                    DropdownMenuItem(value: level, child: Text(level)))
-                .toList(),
-            onChanged: (value) {
-              selectedDifficulty = value;
-            },
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                if (selectedDifficulty != null) {
-                  Navigator.of(context).pop();
-                  _confirmSelection(context, language, selectedDifficulty!);
-                }
-              },
-              child: const CustomText(text: "Proceed"),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  void _confirmSelection(
-      BuildContext context, String language, String difficulty) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: const CustomText(text: "Confirm"),
-          content:
-              CustomText(text: "You selected $difficulty difficulty. Proceed?"),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) =>
-                      QuizScreen(language: language, difficulty: difficulty),
-                ));
-              },
-              child: const CustomText(text: "Yes"),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const CustomText(text: "No"),
-            ),
-          ],
-        );
-      },
     );
   }
 }

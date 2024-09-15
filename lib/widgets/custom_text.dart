@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../utilities/colours.dart';
+
 class CustomText extends StatelessWidget {
   final String text;
   final TextStyle style;
@@ -25,8 +27,8 @@ class CustomText extends StatelessWidget {
       text,
       style: GoogleFonts.poppins(
         color: Theme.of(context).brightness == Brightness.dark
-            ? Colors.white
-            : Colors.black,
+            ? Colours.grey
+            : Colours.darkGrey,
         fontSize: style.fontSize,
         fontWeight: style.fontWeight,
       ),

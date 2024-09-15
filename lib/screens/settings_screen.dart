@@ -1,5 +1,6 @@
 import 'package:code_quest/utilities/utilities.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/providers.dart';
@@ -9,7 +10,7 @@ class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
 
   @override
-  _SettingsScreenState createState() => _SettingsScreenState();
+  ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
 }
 
 class _SettingsScreenState extends ConsumerState<SettingsScreen> {
@@ -18,6 +19,16 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final user = ref.watch(signinProvider);
 
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Navigator.of(context).pop(),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            size: 30,
+          ),
+        ),
+        title: const Icon(Icons.settings_rounded, size: 30),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -25,13 +36,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconButton(
-                onPressed: Navigator.of(context).pop,
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  size: 30,
-                ),
-              ),
               const SizedBox(width: 50),
               Header(user: user!),
               const SizedBox(height: 50),
@@ -44,7 +48,16 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
-                  // Show about dialog or screen
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return const AlertDialog(
+                        backgroundColor: Colors.transparent,
+                        contentPadding: EdgeInsets.zero,
+                        content: AboutDialogContent(),
+                      );
+                    },
+                  );
                 },
               ),
               ListTile(
@@ -54,7 +67,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 onTap: () {
-                  // Exit the app
+                  SystemNavigator.pop();
                 },
               ),
               ListTile(

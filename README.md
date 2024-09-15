@@ -9,7 +9,7 @@ level, and then take quizzes to test their knowledge.
 
 - Google Sign-In for authentication.
 - Supports multiple programming languages (starting with Python).
-- Dynamic difficulty levels: Beginner, Junior Dev, and Professional.
+- Dynamic difficulty levels: Beginner, Junior Developer, and Professional.
 - Quiz questions fetched from Firestore.
 - Score tracking and quiz result display.
 - Clean and intuitive UI with Material Design.
@@ -17,6 +17,8 @@ level, and then take quizzes to test their knowledge.
 ## Tech Stack
 
 - **Flutter**: Mobile UI framework for building cross-platform apps.
+- **Dart**: Client-side programming language for Flutter apps.
+- **Riverpod**: State management library for Flutter apps.
 - **Firebase**: Backend services for authentication and Firestore database.
 - **Google Sign-In**: Easy Google authentication integration.
 

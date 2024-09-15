@@ -4,9 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'providers/providers.dart';
-import 'screens/auth_screen.dart';
-import 'screens/home_screen.dart';
-import 'screens/settings_screen.dart';
+import 'screens/screens.dart';
 import 'screens/splash_screen.dart';
 
 Future<void> main() async {
@@ -30,10 +28,22 @@ class CodeQuest extends ConsumerWidget {
       theme: themeNotifier.darkTheme
           ? ThemeData(brightness: Brightness.dark)
           : ThemeData(brightness: Brightness.light),
-      home: user == null ? const SplashScreen() : HomeScreen(user: user),
+      home: user == null ? const SplashScreen() : const HomeScreen(),
       routes: {
         '/auth': (context) => const AuthScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/quiz': (context) {
+          final args =
+              ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+          return QuizScreen(
+              language: args['language']!, difficulty: args['difficulty']!);
+        },
+        '/progress': (context) => const ProgressScreen(),
         '/settings': (context) => const SettingsScreen(),
+        '/review_incorrect_answers': (context) => ReviewIncorrectAnswersScreen(
+              incorrectAnswers: ModalRoute.of(context)!.settings.arguments
+                  as List<Map<String, dynamic>>,
+            ),
       },
     );
   }

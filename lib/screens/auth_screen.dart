@@ -23,28 +23,24 @@ class AuthScreen extends ConsumerWidget {
               children: [
                 Image.asset('assets/images/ic_launcher.png', height: 200),
                 const SizedBox(height: 20),
-                _buildSignInButton(
-                  context,
-                  ref,
-                  'assets/images/google.png',
-                  'Continue with Google',
-                  () async {
+                GlassButton(
+                  widgetRef: ref,
+                  assetPath: 'assets/images/google.svg',
+                  buttonText: 'Continue with Google',
+                  onTap: () async {
                     await ref.read(signinProvider.notifier).signInWithGoogle();
                     final user = FirebaseAuth.instance.currentUser;
                     if (user != null && context.mounted) {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => HomeScreen(user: user),
-                      ));
+                      Navigator.of(context).pushReplacementNamed('/home');
                     }
                   },
                 ),
                 const SizedBox(height: 20),
-                _buildSignInButton(
-                  context,
-                  ref,
-                  'assets/images/apple.png',
-                  'Continue with Apple',
-                  () async {
+                GlassButton(
+                  widgetRef: ref,
+                  assetPath: 'assets/images/apple.svg',
+                  buttonText: 'Continue with Apple',
+                  onTap: () async {
                     // TODO: Add Apple sign-in logic here
                     CustomSnackBar.showSnackBar(
                       context,
@@ -53,12 +49,11 @@ class AuthScreen extends ConsumerWidget {
                   },
                 ),
                 const SizedBox(height: 20),
-                _buildSignInButton(
-                  context,
-                  ref,
-                  'assets/images/facebook.png',
-                  'Continue with Facebook',
-                  () async {
+                GlassButton(
+                  widgetRef: ref,
+                  assetPath: 'assets/images/facebook.svg',
+                  buttonText: 'Continue with Facebook',
+                  onTap: () async {
                     // TODO: Add Facebook sign-in logic here
                     CustomSnackBar.showSnackBar(
                       context,
@@ -68,38 +63,6 @@ class AuthScreen extends ConsumerWidget {
                 ),
               ],
             ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSignInButton(
-    BuildContext context,
-    WidgetRef ref,
-    String assetPath,
-    String buttonText,
-    VoidCallback onTap,
-  ) {
-    return InkWell(
-      onTap: onTap,
-      child: FrostedGlassContainer(
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            children: [
-              Image.asset(assetPath, height: 40),
-              const SizedBox(width: 20),
-              Expanded(
-                child: CustomText(
-                  text: buttonText,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
           ),
         ),
       ),
