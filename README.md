@@ -1,6 +1,6 @@
-# code_quest
+# CodeQuest
 
-A new Flutter project.
+A quiz app for programming languages...
 
 ## Getting Started
 
