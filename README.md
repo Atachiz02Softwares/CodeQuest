@@ -82,14 +82,18 @@ To get started with the project, follow these steps:
 ## Project Structure
 
 The app is divided into several components:
-└── lib/
-    └── main.dart # App entry point
-    └── auth_screen.dart # Google Sign-In authentication screen
-    └── home_screen.dart # Home screen after login
-    └── quiz_screen.dart # Dynamic quiz interface
-└── assets/
-    └── images/
-└── pubspec.yaml # Project configuration file
+
+lib/
+└── main.dart              # App entry point
+└── auth_screen.dart       # Google Sign-In screen
+└── home_screen.dart       # Home screen
+└── quiz_screen.dart       # Quiz interface
+
+assets/
+└── images/                # Image assets
+
+pubspec.yaml               # Project dependencies and configuration
+
 
 
 ## How to Use
@@ -115,11 +119,16 @@ Example document:
 ```json
 {
   "question": "What is the correct syntax for a function in Python?",
-  "options": ["def functionName():", "function functionName()", "func functionName()"],
+  "options": [
+    "def functionName():",
+    "function functionName()",
+    "func functionName()"
+  ],
   "correctAnswer": "def functionName():",
   "language": "Python",
   "difficulty": "Beginner"
 }
+
 
 ## Contributing
 
