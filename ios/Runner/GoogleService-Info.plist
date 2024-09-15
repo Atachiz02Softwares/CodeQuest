@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>482909193505-tblsn6vgo7p2kv23h0u4ljkck579dgo9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.482909193505-tblsn6vgo7p2kv23h0u4ljkck579dgo9</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>482909193505-j3m0m6cbnp5u7q6e8on8rs8f6dd8dilr.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDQVSS2yGfSCcxiEfd94L0s9LpYET7-h_A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>482909193505</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>morpheus.softwares.codeQuest</string>
+	<key>PROJECT_ID</key>
+	<string>code-quest-84b69</string>
+	<key>STORAGE_BUCKET</key>
+	<string>code-quest-84b69.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:482909193505:ios:b18539ef2adf28cee0ea60</string>
+</dict>
+</plist>

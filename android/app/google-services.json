@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "482909193505",
+    "project_id": "code-quest-84b69",
+    "storage_bucket": "code-quest-84b69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482909193505:android:85ff7d415510a923e0ea60",
+        "android_client_info": {
+          "package_name": "morpheus.softwares.code_quest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482909193505-j3m0m6cbnp5u7q6e8on8rs8f6dd8dilr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "morpheus.softwares.code_quest",
+            "certificate_hash": "d2b3719561198a15cff06df47a12cbad5403477d"
+          }
+        },
+        {
+          "client_id": "482909193505-ge0v4k3l7c4rs7gpkrf44hfip5n0fpc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM3NfWW2gKb9iPvPQ8HLTQZux1kUbbFks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482909193505-ge0v4k3l7c4rs7gpkrf44hfip5n0fpc1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "482909193505-tblsn6vgo7p2kv23h0u4ljkck579dgo9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "morpheus.softwares.codeQuest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
