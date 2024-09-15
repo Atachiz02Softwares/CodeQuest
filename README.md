@@ -1,6 +1,9 @@
 # CodeQuest
 
-Code Quest is a Flutter-based educational quiz app designed to help users learn various programming languages. The app integrates with Firebase for authentication and Firestore for managing quiz data. Users can sign in using Google authentication, select their programming language and difficulty level, and then take quizzes to test their knowledge.
+Code Quest is a Flutter-based educational quiz app designed to help users learn various programming
+languages. The app integrates with Firebase for authentication and Firestore for managing quiz data.
+Users can sign in using Google authentication, select their programming language and difficulty
+level, and then take quizzes to test their knowledge.
 
 ## Features
 
@@ -37,12 +40,13 @@ To get started with the project, follow these steps:
 
 1. Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
 2. Enable **Authentication** with **Google Sign-In** method.
-3. Set up **Firestore** and create a collection named `quiz_questions` with documents containing fields for:
-   - `question`: The quiz question (string).
-   - `options`: An array of possible answers.
-   - `correctAnswer`: The correct answer.
-   - `language`: The programming language (e.g., Python).
-   - `difficulty`: The difficulty level (e.g., Beginner, Junior Dev, Professional).
+3. Set up **Firestore** and create a collection named `quiz_questions` with documents containing
+   fields for:
+    - `question`: The quiz question (string).
+    - `options`: An array of possible answers.
+    - `correctAnswer`: The correct answer.
+    - `language`: The programming language (e.g., Python).
+    - `difficulty`: The difficulty level (e.g., Beginner, Junior Dev, Professional).
 4. Download the `google-services.json` file and place it in the `android/app` directory.
 
 ### Installation
@@ -84,17 +88,15 @@ To get started with the project, follow these steps:
 The app is divided into several components:
 
 lib/
-└── main.dart              # App entry point
-└── auth_screen.dart       # Google Sign-In screen
-└── home_screen.dart       # Home screen
-└── quiz_screen.dart       # Quiz interface
+└── main.dart # App entry point
+└── auth_screen.dart # Google Sign-In screen
+└── home_screen.dart # Home screen
+└── quiz_screen.dart # Quiz interface
 
 assets/
-└── images/                # Image assets
+└── images/ # Image assets
 
-pubspec.yaml               # Project dependencies and configuration
-
-
+pubspec.yaml # Project dependencies and configuration
 
 ## How to Use
 
@@ -106,7 +108,8 @@ pubspec.yaml               # Project dependencies and configuration
 
 ## Firestore Data Structure
 
-In Firestore, questions are stored under the collection `quiz_questions`. Each document represents a quiz question with the following fields:
+In Firestore, questions are stored under the collection `quiz_questions`. Each document represents a
+quiz question with the following fields:
 
 - `question`: The text of the quiz question.
 - `options`: An array of possible answers.
@@ -128,18 +131,19 @@ Example document:
   "language": "Python",
   "difficulty": "Beginner"
 }
-
+```
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, please fork the repository and make changes as you'd like. Submit a pull request for review.
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository
+and make changes as you'd like. Submit a pull request for review.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-
 ### Additional Notes:
+
 - Update the Firebase setup instructions according to your actual configuration.
 - Replace placeholder GitHub URLs, screenshots, and other links with your real content.
 - You can customize the `Firestore Data Structure` section based on your actual quiz schema.
