@@ -23,8 +23,14 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: GoogleFonts.poppins().merge(style),
-      textAlign: align ?? TextAlign.center,
+      style: GoogleFonts.poppins(
+        color: Theme.of(context).brightness == Brightness.dark
+            ? Colors.white
+            : Colors.black,
+        fontSize: style.fontSize,
+        fontWeight: style.fontWeight,
+      ),
+      textAlign: align,
       maxLines: maxLines,
       overflow: overflow,
       softWrap: softWrap,

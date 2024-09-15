@@ -78,6 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
+                align: TextAlign.center,
               ),
             ),
           ],

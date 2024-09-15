@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class FrostedGlassContainer extends StatelessWidget {
@@ -14,7 +15,9 @@ class FrostedGlassContainer extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1),
+            color: ThemeData().brightness == Brightness.dark
+                ? Colors.grey.withOpacity(0.1)
+                : Colors.white.withOpacity(0.1),
             borderRadius: BorderRadius.circular(30),
             border: Border.all(color: Colors.white.withOpacity(0.2)),
           ),

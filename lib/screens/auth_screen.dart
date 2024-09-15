@@ -15,41 +15,87 @@ class AuthScreen extends ConsumerWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/ic_launcher.png', height: 200),
+                const SizedBox(height: 20),
+                _buildSignInButton(
+                  context,
+                  ref,
+                  'assets/images/google.png',
+                  'Continue with Google',
+                  () async {
+                    await ref.read(signinProvider.notifier).signInWithGoogle();
+                    final user = FirebaseAuth.instance.currentUser;
+                    if (user != null && context.mounted) {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => HomeScreen(user: user),
+                      ));
+                    }
+                  },
+                ),
+                const SizedBox(height: 20),
+                _buildSignInButton(
+                  context,
+                  ref,
+                  'assets/images/apple.png',
+                  'Continue with Apple',
+                  () async {
+                    // TODO: Add Apple sign-in logic here
+                    CustomSnackBar.showSnackBar(
+                      context,
+                      'Apple sign-in is not yet supported',
+                    );
+                  },
+                ),
+                const SizedBox(height: 20),
+                _buildSignInButton(
+                  context,
+                  ref,
+                  'assets/images/facebook.png',
+                  'Continue with Facebook',
+                  () async {
+                    // TODO: Add Facebook sign-in logic here
+                    CustomSnackBar.showSnackBar(
+                      context,
+                      'Facebook sign-in is not yet supported',
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSignInButton(
+    BuildContext context,
+    WidgetRef ref,
+    String assetPath,
+    String buttonText,
+    VoidCallback onTap,
+  ) {
+    return InkWell(
+      onTap: onTap,
+      child: FrostedGlassContainer(
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
             children: [
-              Image.asset('assets/images/ic_launcher.png', height: 200),
-              const SizedBox(height: 20),
-              InkWell(
-                onTap: () async {
-                  await ref.read(signinProvider.notifier).signInWithGoogle();
-                  final user = FirebaseAuth.instance.currentUser;
-                  if (user != null && context.mounted) {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => HomeScreen(user: user),
-                    ));
-                  }
-                },
-                child: FrostedGlassContainer(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Row(
-                      children: [
-                        Image.asset('assets/images/google_logo.png',
-                            height: 50),
-                        const Expanded(
-                          child: CustomText(
-                            text: "Continue with Google",
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+              Image.asset(assetPath, height: 40),
+              const SizedBox(width: 20),
+              Expanded(
+                child: CustomText(
+                  text: buttonText,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

@@ -22,6 +22,7 @@ level, and then take quizzes to test their knowledge.
 
 ## Screenshots
 
+![Splash Screen](screenshots/splash_screen.png)
 ![Auth Screen](screenshots/auth_screen.png)
 ![Home Screen](screenshots/home_screen.png)
 ![Quiz Screen](screenshots/quiz_screen.png)

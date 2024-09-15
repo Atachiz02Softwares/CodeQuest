@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/widgets.dart';
 import 'screens.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,57 +12,41 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          // Top Left: User Name
-          Positioned(
-            top: 40,
-            left: 20,
-            child: Text(
-              user.displayName ?? 'Anonymous',
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-          // Top Right: Profile Picture or Avatar
-          Positioned(
-            top: 40,
-            right: 20,
-            child: CircleAvatar(
-              backgroundImage:
-                  user.photoURL != null ? NetworkImage(user.photoURL!) : null,
-              radius: 25,
-              child: user.photoURL == null ? const Icon(Icons.person) : null,
-            ),
-          ),
-          // Center: Programming language container
-          Center(
-            child: Container(
-              width: 300,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [
-                  BoxShadow(color: Colors.black26, blurRadius: 10),
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text("Choose a Language",
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Header(user: user),
+            Center(
+              child: Container(
+                width: 300,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: const [
+                    BoxShadow(color: Colors.black26, blurRadius: 10),
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const CustomText(
+                      text: "Choose a Language",
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  ListTile(
-                    title: const Text("Python"),
-                    trailing: const Icon(Icons.arrow_forward),
-                    onTap: () => _showDifficultySelector(context, "Python"),
-                  ),
-                  // Add more languages here
-                ],
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    ListTile(
+                      title: const CustomText(text: "Python"),
+                      trailing: const Icon(Icons.arrow_forward),
+                      onTap: () => _showDifficultySelector(context, "Python"),
+                    ),
+                    // Add more languages here
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -71,6 +56,11 @@ class HomeScreen extends StatelessWidget {
           BottomNavigationBarItem(
               icon: Icon(Icons.settings), label: 'Settings'),
         ],
+        onTap: (index) {
+          if (index == 2) {
+            Navigator.of(context).pushNamed('/settings');
+          }
+        },
       ),
     );
   }
@@ -81,7 +71,7 @@ class HomeScreen extends StatelessWidget {
       builder: (context) {
         String? selectedDifficulty;
         return AlertDialog(
-          title: const Text("Select Difficulty"),
+          title: const CustomText(text: "Select Difficulty"),
           content: DropdownButton<String>(
             value: selectedDifficulty,
             items: ["Beginner", "Junior Dev", "Professional"]
@@ -100,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                   _confirmSelection(context, language, selectedDifficulty!);
                 }
               },
-              child: const Text("Proceed"),
+              child: const CustomText(text: "Proceed"),
             ),
           ],
         );
@@ -114,8 +104,9 @@ class HomeScreen extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text("Confirm"),
-          content: Text("You selected $difficulty difficulty. Proceed?"),
+          title: const CustomText(text: "Confirm"),
+          content:
+              CustomText(text: "You selected $difficulty difficulty. Proceed?"),
           actions: [
             TextButton(
               onPressed: () {
@@ -125,13 +116,13 @@ class HomeScreen extends StatelessWidget {
                       QuizScreen(language: language, difficulty: difficulty),
                 ));
               },
-              child: const Text("Yes"),
+              child: const CustomText(text: "Yes"),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text("No"),
+              child: const CustomText(text: "No"),
             ),
           ],
         );

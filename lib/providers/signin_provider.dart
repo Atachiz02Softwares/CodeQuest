@@ -12,17 +12,16 @@ class SigninNotifier extends StateNotifier<User?> {
   }
 
   Future<void> _checkSignInStatus() async {
-    FirebaseAuth auth = FirebaseAuth.instance;
-    state = auth.currentUser;
+    state = FirebaseAuth.instance.currentUser;
   }
 
   Future<void> signInWithGoogle() async {
-    Authentication().signInWithGoogle();
+    await Authentication().signInWithGoogle();
     state = FirebaseAuth.instance.currentUser;
   }
 
   Future<void> signOut() async {
-    await FirebaseAuth.instance.signOut();
+    await Authentication().signOut();
     state = null;
   }
 }
