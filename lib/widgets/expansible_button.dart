@@ -60,12 +60,12 @@ class _ExpansibleButtonState extends State<ExpansibleButton> {
             ),
             AnimatedContainer(
               duration: const Duration(milliseconds: 300),
-              height: widget.isExpanded ? 200 : 0,
+              height: widget.isExpanded ? 140 : 0,
               child: widget.isExpanded
                   ? SingleChildScrollView(
                       child: Column(
                         children: [
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 20),
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             physics: const BouncingScrollPhysics(),
@@ -96,6 +96,7 @@ class _ExpansibleButtonState extends State<ExpansibleButton> {
                               }).toList(),
                             ),
                           ),
+                          const SizedBox(height: 10),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colours.tertiary,

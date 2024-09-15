@@ -3,33 +3,44 @@ import 'package:flutter/material.dart';
 import 'widgets.dart';
 
 class AboutDialogContent extends StatelessWidget {
-  const AboutDialogContent({super.key});
+  final String title, content, buttonText;
+  final VoidCallback? onTap;
+
+  const AboutDialogContent({
+    super.key,
+    required this.title,
+    required this.content,
+    required this.buttonText,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const FrostedGlassContainer(
+    return FrostedGlassContainer(
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomText(
-              text: 'About CodeQuest',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              text: title,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             CustomText(
-              text:
-                  'Code Quest is a cross-platform educational quiz app designed '
-                  'to help users learn various programming languages. \n\n'
-                  'Developed and Powered by Atachiz02 Softwares.',
-              style: TextStyle(fontSize: 16),
+              text: content,
+              style: const TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 16),
-            CustomText(
-              text: 'Version: 1.0.0',
-              style: TextStyle(fontSize: 16),
+            TextButton.icon(
+              onPressed: onTap,
+              label: CustomText(
+                text: buttonText,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),

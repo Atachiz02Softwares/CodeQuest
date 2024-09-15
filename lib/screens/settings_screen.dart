@@ -51,10 +51,19 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return const AlertDialog(
+                      return AlertDialog(
                         backgroundColor: Colors.transparent,
                         contentPadding: EdgeInsets.zero,
-                        content: AboutDialogContent(),
+                        content: AboutDialogContent(
+                          title: 'About CodeQuest',
+                          content:
+                              'Code Quest is a cross-platform educational quiz app designed '
+                              'to help users learn various programming languages.\n\n'
+                              'Developed and Powered by Atachiz02 Softwares.\n\n'
+                              'Version: 1.0.0',
+                          buttonText: 'Close',
+                          onTap: Navigator.of(context).pop,
+                        ),
                       );
                     },
                   );

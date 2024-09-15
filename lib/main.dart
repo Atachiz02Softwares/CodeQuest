@@ -40,10 +40,6 @@ class CodeQuest extends ConsumerWidget {
         },
         '/progress': (context) => const ProgressScreen(),
         '/settings': (context) => const SettingsScreen(),
-        '/review_incorrect_answers': (context) => ReviewIncorrectAnswersScreen(
-              incorrectAnswers: ModalRoute.of(context)!.settings.arguments
-                  as List<Map<String, dynamic>>,
-            ),
       },
     );
   }

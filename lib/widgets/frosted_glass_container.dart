@@ -6,8 +6,9 @@ import '../utilities/colours.dart';
 
 class FrostedGlassContainer extends StatelessWidget {
   final Widget child;
+  final EdgeInsets? margin;
 
-  const FrostedGlassContainer({super.key, required this.child});
+  const FrostedGlassContainer({super.key, required this.child, this.margin});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class FrostedGlassContainer extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
+          margin: margin,
           decoration: BoxDecoration(
             color: Theme.of(context).brightness == Brightness.light
                 ? Colours.grey.withOpacity(0.1)

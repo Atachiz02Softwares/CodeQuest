@@ -1,0 +1,796 @@
+{
+  "questions": [
+    {
+      "question": "What is the correct syntax for a function in Python?",
+      "options": [
+        "def functionName():",
+        "function functionName()",
+        "func functionName()"
+      ],
+      "correctAnswer": "def functionName():",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which of the following is a mutable data type in Python?",
+      "options": ["List", "Tuple", "String"],
+      "correctAnswer": "List",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the output of print(2 ** 3)?",
+      "options": ["6", "8", "9"],
+      "correctAnswer": "8",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "How do you create a list in Python?",
+      "options": ["list = []", "list = ()", "list = {}"],
+      "correctAnswer": "list = []",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which keyword is used to define a class in Python?",
+      "options": ["class", "def", "function"],
+      "correctAnswer": "class",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the correct way to import a module in Python?",
+      "options": [
+        "import module_name",
+        "include module_name",
+        "require module_name"
+      ],
+      "correctAnswer": "import module_name",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which of the following is not a valid variable name in Python?",
+      "options": ["my_var", "my-var", "myVar"],
+      "correctAnswer": "my-var",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the purpose of the 'self' keyword in Python?",
+      "options": [
+        "To refer to the instance of the class",
+        "To refer to the class itself",
+        "To define a variable"
+      ],
+      "correctAnswer": "To refer to the instance of the class",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "How do you start a comment in Python?",
+      "options": ["// comment", "# comment", "/* comment */"],
+      "correctAnswer": "# comment",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the output of 'Hello' + ' World' in Python?",
+      "options": ["'Hello World'", "'HelloWorld'", "'Hello World!'"],
+      "correctAnswer": "'Hello World'",
+      "language": "Python",
+      "difficulty": "Beginner"
+    },
+
+    {
+      "question": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Text Markup Language",
+        "Hyperlink and Text Markup Language"
+      ],
+      "correctAnswer": "Hyper Text Markup Language",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which tag is used to create a hyperlink in HTML?",
+      "options": ["<a>", "<link>", "<href>"],
+      "correctAnswer": "<a>",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which HTML tag is used to define an unordered list?",
+      "options": ["<ul>", "<ol>", "<li>"],
+      "correctAnswer": "<ul>",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the correct HTML element for the largest heading?",
+      "options": ["<h1>", "<heading>", "<h6>"],
+      "correctAnswer": "<h1>",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which attribute is used to specify the URL of an image in HTML?",
+      "options": ["src", "href", "link"],
+      "correctAnswer": "src",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the purpose of the <meta> tag in HTML?",
+      "options": [
+        "To provide metadata about the HTML document",
+        "To create a footer",
+        "To link external stylesheets"
+      ],
+      "correctAnswer": "To provide metadata about the HTML document",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which HTML element is used to define a table?",
+      "options": ["<table>", "<tab>", "<tbody>"],
+      "correctAnswer": "<table>",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What does the <br> tag do in HTML?",
+      "options": [
+        "Inserts a line break",
+        "Inserts a paragraph break",
+        "Inserts a horizontal line"
+      ],
+      "correctAnswer": "Inserts a line break",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which tag is used to define a footer in HTML?",
+      "options": ["<footer>", "<bottom>", "<section>"],
+      "correctAnswer": "<footer>",
+      "language": "HTML",
+      "difficulty": "Beginner"
+    },
+
+    {
+      "question": "What is the correct syntax to create a function in Java?",
+      "options": [
+        "function functionName() {}",
+        "void functionName() {}",
+        "public void functionName() {}"
+      ],
+      "correctAnswer": "public void functionName() {}",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which of the following is a valid declaration of a boolean in Java?",
+      "options": ["boolean b = true;", "bool b = true;", "boolean b = 1;"],
+      "correctAnswer": "boolean b = true;",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the default value of a local variable in Java?",
+      "options": ["0", "null", "undefined"],
+      "correctAnswer": "undefined",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which keyword is used to inherit a class in Java?",
+      "options": ["extends", "inherits", "implements"],
+      "correctAnswer": "extends",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the correct way to create an array in Java?",
+      "options": [
+        "int[] arr = new int[5];",
+        "int arr[] = new int(5);",
+        "int arr = new int[5];"
+      ],
+      "correctAnswer": "int[] arr = new int[5];",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which of the following is not a primitive data type in Java?",
+      "options": ["int", "boolean", "String"],
+      "correctAnswer": "String",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which method is used to start a thread in Java?",
+      "options": ["start()", "run()", "execute()"],
+      "correctAnswer": "start()",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the main method signature in Java?",
+      "options": [
+        "public static void main(String[] args)",
+        "public void main(String args)",
+        "static void main(String args)"
+      ],
+      "correctAnswer": "public static void main(String[] args)",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is the purpose of the 'static' keyword in Java?",
+      "options": [
+        "To define a class variable or method",
+        "To define an instance variable or method",
+        "To define a constructor"
+      ],
+      "correctAnswer": "To define a class variable or method",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "Which of the following is a valid way to declare a variable in Java?",
+      "options": ["int num = 10;", "num int = 10;", "10 int num;"],
+      "correctAnswer": "int num = 10;",
+      "language": "Java",
+      "difficulty": "Beginner"
+    },
+    {
+      "question": "What is a lambda function in Python?",
+      "options": [
+        "A small anonymous function",
+        "A function with no arguments",
+        "A function that returns another function"
+      ],
+      "correctAnswer": "A small anonymous function",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "How do you handle exceptions in Python?",
+      "options": ["try...except", "catch...finally", "handle...error"],
+      "correctAnswer": "try...except",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the purpose of the 'with' statement in Python?",
+      "options": [
+        "To simplify exception handling",
+        "To manage resources automatically",
+        "To define a context"
+      ],
+      "correctAnswer": "To manage resources automatically",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the output of the following code: print(type([]))?",
+      "options": ["<class 'list'>", "<class 'dict'>", "<class 'tuple'>"],
+      "correctAnswer": "<class 'list'>",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which of the following is used to define a decorator in Python?",
+      "options": ["@decorator", "def decorator()", "decorator()"],
+      "correctAnswer": "@decorator",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the purpose of the 'pass' statement in Python?",
+      "options": [
+        "To skip a block of code",
+        "To define a function",
+        "To create a loop"
+      ],
+      "correctAnswer": "To skip a block of code",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "How can you convert a string to an integer in Python?",
+      "options": ["int(string)", "string.toInt()", "convert(string)"],
+      "correctAnswer": "int(string)",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the output of the following code: print([1, 2, 3] * 2)?",
+      "options": ["[1, 2, 3, 1, 2, 3]", "[2, 4, 6]", "[1, 2, 3, 2, 4, 6]"],
+      "correctAnswer": "[1, 2, 3, 1, 2, 3]",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which of the following is a built-in function in Python?",
+      "options": ["length()", "len()", "size()"],
+      "correctAnswer": "len()",
+      "language": "Python",
+      "difficulty": "Junior Developer"
+    },
+
+    {
+      "question": "What is the purpose of the 'DOCTYPE' declaration in HTML?",
+      "options": [
+        "To define the document type and version",
+        "To link CSS files",
+        "To create a header"
+      ],
+      "correctAnswer": "To define the document type and version",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which HTML tag is used to define a section in a document?",
+      "options": ["<section>", "<div>", "<article>"],
+      "correctAnswer": "<section>",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which attribute is used to specify an alternative text for an image in HTML?",
+      "options": ["alt", "title", "src"],
+      "correctAnswer": "alt",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the purpose of the <head> tag in HTML?",
+      "options": [
+        "To contain metadata and links to scripts and styles",
+        "To define the main content of the page",
+        "To create a footer"
+      ],
+      "correctAnswer": "To contain metadata and links to scripts and styles",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which tag is used to create a dropdown list in HTML?",
+      "options": ["<select>", "<list>", "<dropdown>"],
+      "correctAnswer": "<select>",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which HTML element is used to define a navigation menu?",
+      "options": ["<nav>", "<menu>", "<ul>"],
+      "correctAnswer": "<nav>",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the purpose of the <link> tag in HTML?",
+      "options": [
+        "To link external resources like CSS",
+        "To create hyperlinks",
+        "To define images"
+      ],
+      "correctAnswer": "To link external resources like CSS",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which HTML element is used to display a horizontal line?",
+      "options": ["<hr>", "<line>", "<hline>"],
+      "correctAnswer": "<hr>",
+      "language": "HTML",
+      "difficulty": "Junior Developer"
+    },
+
+    {
+      "question": "What is the main feature of Java's garbage collection?",
+      "options": [
+        "Automatic memory management",
+        "Manual memory management",
+        "Memory allocation"
+      ],
+      "correctAnswer": "Automatic memory management",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is an interface in Java?",
+      "options": [
+        "A reference type that can contain only constants and method signatures",
+        "A class that cannot be instantiated",
+        "A type of exception"
+      ],
+      "correctAnswer": "A reference type that can contain only constants and method signatures",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the keyword used to create a new thread in Java?",
+      "options": ["new", "create", "start"],
+      "correctAnswer": "new",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the output of the following code: System.out.println(5 + 3 + '8');?",
+      "options": ["58", "88", "11"],
+      "correctAnswer": "88",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the purpose of the 'final' keyword in Java?",
+      "options": [
+        "To declare constants",
+        "To prevent method overriding",
+        "Both A and B"
+      ],
+      "correctAnswer": "Both A and B",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the result of the expression 10 % 3 in Java?",
+      "options": ["1", "3", "0"],
+      "correctAnswer": "1",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "Which of the following is a valid way to declare a constant in Java?",
+      "options": ["final int x = 10;", "const int x = 10;", "int x = 10;"],
+      "correctAnswer": "final int x = 10;",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the purpose of the 'synchronized' keyword in Java?",
+      "options": [
+        "To prevent thread interference",
+        "To define a class",
+        "To declare a variable"
+      ],
+      "correctAnswer": "To prevent thread interference",
+      "language": "Java",
+      "difficulty": "Junior Developer"
+    },
+    {
+      "question": "What is the purpose of the 'yield' keyword in Python?",
+      "options": [
+        "To create a generator function",
+        "To define a constant",
+        "To define a class"
+      ],
+      "correctAnswer": "To create a generator function",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'nonlocal' keyword in Python?",
+      "options": [
+        "To access variables from an enclosing function (but not the global scope)",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To access variables from an enclosing function (but not the global scope)",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'with' statement in Python?",
+      "options": [
+        "To simplify exception handling and resource management",
+        "To define a constant",
+        "To define a class"
+      ],
+      "correctAnswer": "To simplify exception handling and resource management",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'super' function in Python?",
+      "options": [
+        "To call a method in a parent class from a child class",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To call a method in a parent class from a child class",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'property' decorator in Python?",
+      "options": [
+        "To define a getter, setter, and deleter for an attribute",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To define a getter, setter, and deleter for an attribute",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'contextlib' module in Python?",
+      "options": [
+        "To provide utilities for with-statement contexts",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To provide utilities for with-statement contexts",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'functools' module in Python?",
+      "options": [
+        "To provide higher-order functions and operations on callable objects",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To provide higher-order functions and operations on callable objects",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'itertools' module in Python?",
+      "options": [
+        "To provide efficient looping over iterables",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To provide efficient looping over iterables",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'abc' module in Python?",
+      "options": [
+        "To provide support for defining abstract base classes",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To provide support for defining abstract base classes",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'dataclasses' module in Python?",
+      "options": [
+        "To provide a decorator and functions for generating special methods in user-defined classes",
+        "To define a constant",
+        "To define a thread-local variable"
+      ],
+      "correctAnswer": "To provide a decorator and functions for generating special methods in user-defined classes",
+      "language": "Python",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'contenteditable' attribute in HTML5?",
+      "options": [
+        "To make an element editable by the user",
+        "To define a custom attribute",
+        "To make an element read-only"
+      ],
+      "correctAnswer": "To make an element editable by the user",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'data-*' attribute in HTML5?",
+      "options": [
+        "To store custom data attributes for an element",
+        "To define a custom attribute",
+        "To make an element read-only"
+      ],
+      "correctAnswer": "To store custom data attributes for an element",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'spellcheck' attribute in HTML5?",
+      "options": [
+        "To enable spell checking for an element",
+        "To define a custom attribute",
+        "To make an element read-only"
+      ],
+      "correctAnswer": "To enable spell checking for an element",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'draggable' attribute in HTML5?",
+      "options": [
+        "To make an element draggable",
+        "To define a custom attribute",
+        "To make an element read-only"
+      ],
+      "correctAnswer": "To make an element draggable",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'hidden' attribute in HTML5?",
+      "options": [
+        "To hide an element from the user interface",
+        "To define a custom attribute",
+        "To make an element read-only"
+      ],
+      "correctAnswer": "To hide an element from the user interface",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'required' attribute in HTML5 forms?",
+      "options": [
+        "To make a form field mandatory",
+        "To define a custom attribute",
+        "To make a form field read-only"
+      ],
+      "correctAnswer": "To make a form field mandatory",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'pattern' attribute in HTML5 forms?",
+      "options": [
+        "To specify a regular expression pattern for form field validation",
+        "To define a custom attribute",
+        "To make a form field read-only"
+      ],
+      "correctAnswer": "To specify a regular expression pattern for form field validation",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'placeholder' attribute in HTML5 forms?",
+      "options": [
+        "To provide a hint or example value for a form field",
+        "To define a custom attribute",
+        "To make a form field read-only"
+      ],
+      "correctAnswer": "To provide a hint or example value for a form field",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'autofocus' attribute in HTML5 forms?",
+      "options": [
+        "To automatically set focus on a form field when the page loads",
+        "To define a custom attribute",
+        "To make a form field read-only"
+      ],
+      "correctAnswer": "To automatically set focus on a form field when the page loads",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'multiple' attribute in HTML5 forms?",
+      "options": [
+        "To allow multiple values for a form field (e.g., file upload, email)",
+        "To define a custom attribute",
+        "To make a form field read-only"
+      ],
+      "correctAnswer": "To allow multiple values for a form field (e.g., file upload, email)",
+      "language": "HTML",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'volatile' keyword in Java?",
+      "options": [
+        "To make a variable thread-safe",
+        "To make a variable immutable",
+        "To ensure visibility of a variable across threads"
+      ],
+      "correctAnswer": "To ensure visibility of a variable across threads",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the difference between 'throw' and 'throws' in Java exception handling?",
+      "options": [
+        "'throw' is used to explicitly throw an exception, while 'throws' declares an exception that a method might throw",
+        "'throw' is used to handle an exception, while 'throws' is used to explicitly throw an exception",
+        "'throw' is used to define a custom exception, while 'throws' is used to handle built-in exceptions"
+      ],
+      "correctAnswer": "'throw' is used to explicitly throw an exception, while 'throws' declares an exception that a method might throw",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'transient' keyword in Java?",
+      "options": [
+        "To mark a variable as read-only",
+        "To mark a variable that should not be serialized",
+        "To mark a variable as thread-safe"
+      ],
+      "correctAnswer": "To mark a variable that should not be serialized",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the difference between 'final', 'finally', and 'finalize' in Java?",
+      "options": [
+        "'final' is a keyword used for constants, 'finally' is a block used in exception handling, and 'finalize' is a method called by the garbage collector",
+        "'final' is a keyword used for inheritance, 'finally' is a block used for method overriding, and 'finalize' is a method used for object destruction",
+        "'final' is a keyword used for method overloading, 'finally' is a block used for method overriding, and 'finalize' is a method used for object creation"
+      ],
+      "correctAnswer": "'final' is a keyword used for constants, 'finally' is a block used in exception handling, and 'finalize' is a method called by the garbage collector",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'strictfp' keyword in Java?",
+      "options": [
+        "To ensure consistent floating-point behavior across platforms",
+        "To make a method thread-safe",
+        "To ensure consistent integer behavior across platforms"
+      ],
+      "correctAnswer": "To ensure consistent floating-point behavior across platforms",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'native' keyword in Java?",
+      "options": [
+        "To declare a method that is implemented in native code (e.g., C or C++)",
+        "To declare a method that is synchronized",
+        "To declare a method that is final"
+      ],
+      "correctAnswer": "To declare a method that is implemented in native code (e.g., C or C++)",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'assert' keyword in Java?",
+      "options": [
+        "To define a custom exception",
+        "To perform runtime checks for debugging purposes",
+        "To define a constant"
+      ],
+      "correctAnswer": "To perform runtime checks for debugging purposes",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'enum' keyword in Java?",
+      "options": [
+        "To define a set of constants",
+        "To define a custom exception",
+        "To define a thread-safe variable"
+      ],
+      "correctAnswer": "To define a set of constants",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'instanceof' operator in Java?",
+      "options": [
+        "To check if an object is an instance of a specific class or interface",
+        "To check if a variable is null",
+        "To check if a method is overridden"
+      ],
+      "correctAnswer": "To check if an object is an instance of a specific class or interface",
+      "language": "Java",
+      "difficulty": "Professional"
+    },
+    {
+      "question": "What is the purpose of the 'varargs' feature in Java?",
+      "options": [
+        "To define a variable number of arguments for a method",
+        "To define a thread-safe variable",
+        "To define a custom exception"
+      ],
+      "correctAnswer": "To define a variable number of arguments for a method",
+      "language": "Java",
+      "difficulty": "Professional"
+    }
+  ]
+}

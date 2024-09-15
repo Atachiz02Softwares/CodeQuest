@@ -1,3 +1,4 @@
+import 'package:code_quest/firebase/crud.dart';
 import 'package:code_quest/utilities/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -48,7 +49,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const CustomText(
-                        text: "Choose a programming language to proceed",
+                        text: "Choose a programming language to proceed 👇",
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
