@@ -1,10 +1,9 @@
-import 'package:code_quest/firebase/crud.dart';
-import 'package:code_quest/utilities/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../providers/providers.dart';
+import '../utilities/utilities.dart';
 import '../widgets/widgets.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -86,6 +85,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           _onDifficultySelected('HTML', difficulty);
                         },
                       ),
+                      const SizedBox(height: 20),
+                      TextButton.icon(
+                        onPressed: () => Utils.showFilePicker(context),
+                        icon: const Icon(Icons.book_rounded,
+                            size: 30, color: Colours.primary),
+                        label: const CustomText(
+                          text: 'Study',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -115,7 +127,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         unselectedLabelStyle: GoogleFonts.poppins(
-          textStyle: const TextStyle(fontSize: 16),
+          textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         onTap: (index) {
           if (index == 1) {

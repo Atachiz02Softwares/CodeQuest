@@ -149,7 +149,9 @@ class _QuizScreenState extends State<QuizScreen> {
                       child: CustomText(
                         text: "${widget.language} (${widget.difficulty})",
                         style: const TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.bold),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 50),
@@ -161,7 +163,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           children: [
                             CustomText(
                               text: currentQuestion['question'],
-                              style: const TextStyle(fontSize: 18),
+                              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 20),
                             Column(
@@ -169,7 +171,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                   (currentQuestion['options'] as List<dynamic>)
                                       .map((option) => RadioListTile<String>(
                                             activeColor: Colours.primary,
-                                            title: CustomText(text: option),
+                                            title: CustomText(text: option, style: const TextStyle(fontSize: 18)),
                                             value: option,
                                             groupValue: selectedAnswer,
                                             onChanged: (value) {

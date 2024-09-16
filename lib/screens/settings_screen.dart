@@ -59,7 +59,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                           content:
                               'Code Quest is a cross-platform educational quiz app designed '
                               'to help users learn various programming languages.\n\n'
-                              'Developed and Powered by Atachiz02 Softwares.\n\n'
+                              // 'Developed and Powered by Atachiz02 Softwares.\n\n'
                               'Version: 1.0.0',
                           buttonText: 'Close',
                           onTap: Navigator.of(context).pop,

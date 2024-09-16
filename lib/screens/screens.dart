@@ -4,3 +4,4 @@ export 'progress_screen.dart';
 export 'quiz_screen.dart';
 export 'screens.dart';
 export 'settings_screen.dart';
+export 'study_screen.dart';

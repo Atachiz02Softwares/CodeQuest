@@ -1,5 +1,7 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/screens.dart';
 import '../widgets/widgets.dart';
 import 'colours.dart';
 
@@ -10,7 +12,7 @@ class Utils {
   ) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: Colors.transparent,
+      // backgroundColor: Colors.transparent,
       builder: (context) {
         return DraggableScrollableSheet(
           expand: false,
@@ -76,5 +78,24 @@ class Utils {
         );
       },
     );
+  }
+
+  static void showFilePicker(BuildContext context) async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['pdf'],
+    );
+
+    if (result != null &&
+        result.files.single.path != null &&
+        result.files.isNotEmpty &&
+        context.mounted) {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) =>
+              StudyScreen(filePath: result.files.single.path!),
+        ),
+      );
+    }
   }
 }
