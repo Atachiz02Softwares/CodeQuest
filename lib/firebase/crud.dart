@@ -27,19 +27,28 @@ class CRUD {
     }
   }
 
-  Future<void> saveQuizScore(
+  Future<void> saveQuiz(
     String userId,
     int score,
     String language,
     String difficulty,
     DateTime date,
   ) async {
-    await _firestore.collection('quiz_scores').add({
+    await _firestore.collection('progress').add({
       'userId': userId,
       'score': score,
       'language': language,
       'difficulty': difficulty,
       'date': date,
     });
+  }
+
+  Future<List<DocumentSnapshot>> fetchQuizzes(String userId) async {
+    QuerySnapshot snapshot = await _firestore
+        .collection('progress')
+        .where('userId', isEqualTo: userId)
+        .get();
+
+    return snapshot.docs;
   }
 }

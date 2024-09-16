@@ -67,7 +67,7 @@ class _QuizScreenState extends State<QuizScreen> {
           String userId = user.uid;
 
           CRUD crud = CRUD();
-          await crud.saveQuizScore(
+          await crud.saveQuiz(
             userId,
             score,
             widget.language,
@@ -123,16 +123,13 @@ class _QuizScreenState extends State<QuizScreen> {
             size: 30,
           ),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Icon(Icons.quiz_rounded, size: 30),
-            CustomText(
-              text: "Score: $score",
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
+        title: const Icon(Icons.quiz_rounded, size: 30),
+        actions: <Widget>[
+          CustomText(
+            text: "Score: $score",
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+        ],
       ),
       body: Column(
         children: [
