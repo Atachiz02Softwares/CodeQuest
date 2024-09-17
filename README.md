@@ -1,6 +1,7 @@
 # CodeQuest
 
-Code Quest is a Flutter-based educational quiz app designed to help users learn various programming
+Code Quest (NurtureCode) is a Flutter-based educational quiz app designed to help users learn
+various programming
 languages. The app integrates with Firebase for authentication and Firestore for managing quiz data.
 Users can sign in using Google authentication, select their programming language and difficulty
 level, and then take quizzes to test their knowledge.

@@ -24,6 +24,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   file_picker: ^8.1.2
   syncfusion_flutter_pdfviewer: ^26.2.14
+  firebase_storage: ^12.3.0
 
 dev_dependencies:
   flutter_test:

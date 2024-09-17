@@ -1,16 +1,17 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../providers/signin_provider.dart';
+import '../firebase/authentication.dart';
+import '../providers/provider.dart';
 import '../widgets/widgets.dart';
-import 'home_screen.dart';
 
 class AuthScreen extends ConsumerWidget {
   const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final userAsyncValue = ref.watch(userProvider);
+
     return Scaffold(
       body: Center(
         child: Padding(
@@ -28,11 +29,12 @@ class AuthScreen extends ConsumerWidget {
                   assetPath: 'assets/images/google.svg',
                   buttonText: 'Continue with Google',
                   onTap: () async {
-                    await ref.read(signinProvider.notifier).signInWithGoogle();
-                    final user = FirebaseAuth.instance.currentUser;
-                    if (user != null && context.mounted) {
-                      Navigator.of(context).pushReplacementNamed('/home');
-                    }
+                    await Authentication().signInWithGoogle();
+                    userAsyncValue.whenData((user) {
+                      if (user != null && context.mounted) {
+                        Navigator.of(context).pushReplacementNamed('/home');
+                      }
+                    });
                   },
                 ),
                 const SizedBox(height: 20),

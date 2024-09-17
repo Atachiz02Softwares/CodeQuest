@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen>
             SlideTransition(
               position: _textAnimation,
               child: const CustomText(
-                text: 'Welcome to CodeQuest',
+                text: 'Welcome to NurtureCode',
                 style: TextStyle(
                   fontSize: 50,
                   color: Colors.white,

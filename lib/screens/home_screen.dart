@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../providers/providers.dart';
+import '../providers/provider.dart';
 import '../utilities/utilities.dart';
 import '../widgets/widgets.dart';
 
@@ -31,75 +31,90 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = ref.watch(signinProvider);
+    final userAsyncValue = ref.watch(userProvider);
 
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
-            Header(user: user!),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const CustomText(
-                        text: "Choose a programming language to proceed 👇",
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+            userAsyncValue.when(
+              data: (user) => Column(
+                children: [
+                  Header(user: user!),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(height: 50),
+                            const CustomText(
+                              text:
+                                  "Choose a programming language to proceed 👇",
+                              style: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              align: TextAlign.center,
+                            ),
+                            const SizedBox(height: 50),
+                            ExpansibleButton(
+                              assetPath: 'assets/images/python.svg',
+                              buttonText: 'Python',
+                              isExpanded: _expandedButton == 'Python',
+                              onExpand: () => _onButtonExpanded('Python'),
+                              onDifficultySelected: (difficulty) {
+                                _onDifficultySelected('Python', difficulty);
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                            ExpansibleButton(
+                              assetPath: 'assets/images/java.svg',
+                              buttonText: 'Java',
+                              isExpanded: _expandedButton == 'Java',
+                              onExpand: () => _onButtonExpanded('Java'),
+                              onDifficultySelected: (difficulty) {
+                                _onDifficultySelected('Java', difficulty);
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                            ExpansibleButton(
+                              assetPath: 'assets/images/html.svg',
+                              buttonText: 'HTML',
+                              isExpanded: _expandedButton == 'HTML',
+                              onExpand: () => _onButtonExpanded('HTML'),
+                              onDifficultySelected: (difficulty) {
+                                _onDifficultySelected('HTML', difficulty);
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                            TextButton.icon(
+                              onPressed: () => Utils.showBooks(context),
+                              icon: const Icon(Icons.book_rounded,
+                                  size: 30, color: Colours.primary),
+                              label: const CustomText(
+                                text: 'Study',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        align: TextAlign.center,
                       ),
-                      const SizedBox(height: 50),
-                      ExpansibleButton(
-                        assetPath: 'assets/images/python.svg',
-                        buttonText: 'Python',
-                        isExpanded: _expandedButton == 'Python',
-                        onExpand: () => _onButtonExpanded('Python'),
-                        onDifficultySelected: (difficulty) {
-                          _onDifficultySelected('Python', difficulty);
-                        },
-                      ),
-                      const SizedBox(height: 20),
-                      ExpansibleButton(
-                        assetPath: 'assets/images/java.svg',
-                        buttonText: 'Java',
-                        isExpanded: _expandedButton == 'Java',
-                        onExpand: () => _onButtonExpanded('Java'),
-                        onDifficultySelected: (difficulty) {
-                          _onDifficultySelected('Java', difficulty);
-                        },
-                      ),
-                      const SizedBox(height: 20),
-                      ExpansibleButton(
-                        assetPath: 'assets/images/html.svg',
-                        buttonText: 'HTML',
-                        isExpanded: _expandedButton == 'HTML',
-                        onExpand: () => _onButtonExpanded('HTML'),
-                        onDifficultySelected: (difficulty) {
-                          _onDifficultySelected('HTML', difficulty);
-                        },
-                      ),
-                      const SizedBox(height: 20),
-                      TextButton.icon(
-                        onPressed: () => Utils.showFilePicker(context),
-                        icon: const Icon(Icons.book_rounded,
-                            size: 30, color: Colours.primary),
-                        label: const CustomText(
-                          text: 'Study',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
+                ],
+              ),
+              loading: () => const Center(child: CustomProgressBar()),
+              error: (error, stack) => const Center(
+                child: CustomText(
+                  text: 'An unexpected error occured!',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
                 ),
               ),
             ),

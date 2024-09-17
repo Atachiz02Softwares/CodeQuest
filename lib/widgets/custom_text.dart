@@ -31,6 +31,7 @@ class CustomText extends StatelessWidget {
             : Colours.darkGrey,
         fontSize: style.fontSize,
         fontWeight: style.fontWeight,
+        fontStyle: style.fontStyle,
       ),
       textAlign: align,
       maxLines: maxLines,

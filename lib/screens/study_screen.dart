@@ -1,14 +1,12 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 import '../widgets/custom_text.dart';
 
 class StudyScreen extends StatelessWidget {
-  final String filePath;
+  final String fileUrl, bookName;
 
-  const StudyScreen({super.key, required this.filePath});
+  const StudyScreen({super.key, required this.fileUrl, required this.bookName});
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +19,15 @@ class StudyScreen extends StatelessWidget {
             size: 30,
           ),
         ),
-        title: const Icon(Icons.book_rounded, size: 30),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CustomText(
-              text: filePath.split('/').last,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+        title: CustomText(
+          text: bookName,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
           ),
-        ],
+          overflow: TextOverflow.fade,
+        ),
       ),
-      body: SfPdfViewer.file((File(filePath))),
+      body: SfPdfViewer.network(fileUrl),
     );
   }
 }
