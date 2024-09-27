@@ -70,9 +70,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                                 backgroundColor: Colors.transparent,
                                 contentPadding: EdgeInsets.zero,
                                 content: AboutDialogContent(
-                                  title: 'About CodeQuest',
+                                  title: 'About NurtureCode',
                                   content:
-                                      'Code Quest is a cross-platform educational quiz app designed '
+                                      'NurtureCode is a cross-platform educational quiz app designed '
                                       'to help users learn various programming languages.\n\n'
                                       // 'Developed and Powered by Atachiz02 Softwares.\n\n'
                                       'Version: 1.0.0',
