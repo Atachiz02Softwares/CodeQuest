@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../firebase/firebase.dart';
 import '../providers/provider.dart';
 import '../utilities/colours.dart';
 import '../utilities/utils.dart';
@@ -62,7 +64,17 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
   }
 
   void _showScoreDialog(int total) async {
-    showDialog(
+    final userId = ref.watch(userIdProvider);
+    await CRUD().saveQuiz(
+      userId,
+      score,
+      widget.language,
+      widget.difficulty,
+      DateTime.now(),
+    );
+
+    if (mounted) {
+      showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
@@ -80,6 +92,7 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
         );
       },
     );
+    }
   }
 
   @override

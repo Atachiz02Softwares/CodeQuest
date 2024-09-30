@@ -1,17 +1,30 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/provider.dart';
 import '../widgets/widgets.dart';
 
-class ProgressScreen extends ConsumerWidget {
+class ProgressScreen extends ConsumerStatefulWidget {
   const ProgressScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final userId = FirebaseAuth.instance.currentUser?.uid;
-    final progressAsyncValue = ref.watch(progressProvider(userId!));
+  ConsumerState<ProgressScreen> createState() => _ProgressScreenState();
+}
+
+class _ProgressScreenState extends ConsumerState<ProgressScreen> {
+  @override
+  void initState() {
+    super.initState();
+    final userId = ref.read(userIdProvider);
+    // Use refreshedProgress if needed, but it's needed here to ensure the
+    // latest data is fetched
+    final refreshedProgress = ref.refresh(progressProvider(userId));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final userId = ref.watch(userIdProvider);
+    final progressAsyncValue = ref.watch(progressProvider(userId));
 
     return Scaffold(
       appBar: AppBar(
@@ -61,10 +74,14 @@ class ProgressScreen extends ConsumerWidget {
       body: progressAsyncValue.when(
         data: (quizzes) {
           if (quizzes.isEmpty) {
-            return const Center(
-              child: CustomText(
-                text: "No progress data available yet...",
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+            return const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Center(
+                child: CustomText(
+                  text: "No progress data available yet...",
+                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                  align: TextAlign.center,
+                ),
               ),
             );
           }
@@ -151,6 +168,7 @@ class ProgressScreen extends ConsumerWidget {
           child: CustomText(
             text: "Error loading progress data!",
             style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+            align: TextAlign.center,
           ),
         ),
       ),
